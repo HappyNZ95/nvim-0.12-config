@@ -11,7 +11,11 @@ require("fzf-lua")
 
 vim.keymap.set("n", "<leader>ff", ":Fzf files<CR>", {desc = "Find files in project directory"})
 vim.keymap.set("n", "<leader>fg", ":Fzf live_grep<CR>", {desc = "Find by grepping in project directory" })
-vim.keymap.set("n", "<leader>fc", ':Fzf files vim.fn.stdpath("config")<CR>', {desc = "Find within neovim configuration" })
+
+vim.keymap.set("n", "<leader>fc", function()
+  require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
+end, { desc = "Find within Neovim configuration" })
+
 vim.keymap.set("n", "<leader>fh", ':Fzf helptags<CR>', { desc = "Find Help" })
 vim.keymap.set("n", "<leader>fk", ':Fzf keymaps<CR>', { desc = "Find Keymaps" })
 vim.keymap.set("n", "<leader>fb", ':Fzf builtin<CR>', { desc = "Find Builtin fzf commands" })

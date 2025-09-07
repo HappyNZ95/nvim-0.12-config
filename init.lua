@@ -16,6 +16,9 @@ require('mason-tool-installer').setup({
 	}
 })
 
+-- Treesitter --
+require("plugins.treesitter")
+
 -- Config
 require("config.options")
 require("config.keymaps")
