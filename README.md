@@ -2,16 +2,16 @@ Inspired by MrJakob's nvim from scratch configuration https://github.com/jakobwe
 for neovim 0.12 nightly
 
 - [x] kanagawa.nvim
-- [ ] mini.statusline
+- [x] mini.statusline
 - [x] oil.nvim
 - [x] basic options
 - [ ] vim-sleuth
-- [ ] treesitter.nvim
-- [ ] treesitter-textobjects
+- [x] treesitter.nvim
+- [x] treesitter-textobjects
 - [x] fzf-lua
 - [ ] project.nvim
 - [x] LSP
 - [x] Mason
 - [ ] dressing.nvim
-- [ ] conform.nvim
+- [x] conform.nvim
 - [ ] blink-cmp
