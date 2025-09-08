@@ -31,9 +31,9 @@ require("config.theme")
 
 -- Navigation --
 require ("plugins.oil")
+require("plugins.telescope")
+--require("plugins.fzf-lua")
 
---Fuzzyfind
-require("plugins.fzf-lua")
 
 
 
