@@ -1,8 +1,10 @@
 vim.pack.add({
+	{ src = "https://github.com/hrsh7th/nvim-cmp" },
+	{ src = "https://github.com/ray-x/cmp-sql" },
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 	{ src = "https://github.com/Allaman/emoji.nvim" },
-	{ src = "https://github.com/ray-x/cmp-sql" },
-	{ src = "https://github.com/Saghen/blink.cmp", build = "cargo build --release" },
+	--{ src = "https://github.com/Saghen/blink.cmp", build = "cargo build --release" },
+	{ src = "https://github.com/Saghen/blink.cmp" },
 })
 
 require("blink-cmp").setup({
@@ -40,5 +42,7 @@ require("blink-cmp").setup({
 	-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
 	--
 	-- See the fuzzy documentation for more information
-	fuzzy = { implementation = "prefer_rust_with_warning" },
+	--fuzzy = { implementation = "prefer_rust_with_warning" },
+	--fuzzy = { implementation = "prefer_rust" },
+	fuzzy = { implementation = "lua" },
 })
