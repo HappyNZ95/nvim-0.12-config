@@ -14,4 +14,4 @@ for neovim 0.12 nightly
 - [x] Mason
 - [ ] dressing.nvim
 - [x] conform.nvim
-- [ ] blink-cmp
+- [x] blink-cmp
