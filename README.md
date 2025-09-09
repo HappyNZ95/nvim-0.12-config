@@ -5,7 +5,7 @@ for neovim 0.12 nightly
 - [x] mini.statusline
 - [x] oil.nvim
 - [x] basic options
-- [ ] vim-sleuth
+- [x] vim-sleuth
 - [x] treesitter.nvim
 - [x] treesitter-textobjects
 - [x] fzf-lua

@@ -1,6 +1,6 @@
-if vim.fn.has("win32") == 1 then
-	require("config.powershell")
-end
+--Neovim 0.12 Nightly Configuration--
+
+------------ Plugins ---------------
 
 -- LSP --
 require("plugins.lsp")
@@ -12,19 +12,22 @@ require("plugins.treesitter")
 require("plugins.conform")
 require("plugins.blink-cmp")
 
+-- Navigation --
+require("plugins.oil")
+require("plugins.project-nvim")
+require("plugins.telescope")
+--require("plugins.fzf-lua")
+
 -- Appearance & Themes
 require("plugins.themes.kanagawa")
-require("config.theme")
+require("plugins.mini-statusline")
 
--- Config
+------------ Config --------------
+require("config.theme")
 require("config.options")
 require("config.keymaps")
 
-require("plugins.mini-statusline")
-
------------ Plugins ------------
-
--- Navigation --
-require("plugins.oil")
-require("plugins.telescope")
---require("plugins.fzf-lua")
+-- Powershell if Windows --
+if vim.fn.has("win32") == 1 then
+	require("config.powershell")
+end
