@@ -66,3 +66,10 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 		end
 	end,
 })
+-- :terminal opens in current directory
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "*",
+	callback = function()
+		vim.cmd("lcd " .. vim.fn.getcwd())
+	end,
+})
