@@ -1,3 +1,7 @@
+if vim.fn.has("win32") == 1 then
+	require("config.powershell")
+end
+
 -- LSP --lsp
 vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },

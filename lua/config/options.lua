@@ -14,41 +14,55 @@ vim.opt.autoindent = true -- keep indentation from previous line
 vim.opt.breakindent = true
 
 -- Always show relative line numbers
- vim.opt.number = true
- vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
- --Show line under cursor
- vim.opt.cursorline = true
+--Show line under cursor
+vim.opt.cursorline = true
 
- -- Store undos between sessions
- vim.opt.undofile  = true
+-- Store undos between sessions
+vim.opt.undofile = true
 
- -- Enable mouse mode, can be useful for resizing splits
- vim.opt.mouse = "a"
+-- Enable mouse mode, can be useful for resizing splits
+vim.opt.mouse = "a"
 
- -- Don't show the mode, since it's already in the status line
- -- vim.opt.showmode = false
- 
- --- Case-insensitive seraching UNLESS \C or one or more capital letters in the search term
- vim.opt.ignorecase = true
- vim.opt.smartcase = true
+-- Don't show the mode, since it's already in the status line
+-- vim.opt.showmode = false
 
- -- Keep signcolumn on b default
- vim.opt.signcolumn = "yes"
+--- Case-insensitive seraching UNLESS \C or one or more capital letters in the search term
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
- -- Configure how new splits should be opened
- vim.opt.splitright = true
- vim.opt.splitbelow = true
+-- Keep signcolumn on b default
+vim.opt.signcolumn = "yes"
 
- -- sets how neovim will display certain whitespace characters in the editor
- -- See `:help 'list'`
- -- and `:help 'listchars'`
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- sets how neovim will display certain whitespace characters in the editor
+-- See `:help 'list'`
+-- and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Minimal number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 5
 
-vim.api.nvim_set_hl(0, "LineNr", {bg = "none"})
-vim.api.nvim_set_hl(0, "CursorLineNr", {bg = "none"})
-vim.api.nvim_set_hl(0, "SignColumn", {bg = "none"})
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+
+-- Set Neovim's CWD to the current file's directory
+-- Oil.nvim friendly auto CWD
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	callback = function()
+		local ft = vim.bo.filetype
+		if ft ~= "oil" then
+			local dir = vim.fn.expand("%:p:h")
+			if dir ~= "" then
+				vim.cmd("lcd " .. dir) -- use lcd for window-local CWD
+			end
+		end
+	end,
+})
