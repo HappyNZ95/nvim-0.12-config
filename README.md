@@ -9,9 +9,9 @@ for neovim 0.12 nightly
 - [x] treesitter.nvim
 - [x] treesitter-textobjects
 - [x] fzf-lua
-- [ ] project.nvim
+- [x] project.nvim
 - [x] LSP
 - [x] Mason
-- [ ] dressing.nvim
+- [ ] ~~dressing.nvim~~ snacks.nvim
 - [x] conform.nvim
 - [x] blink-cmp

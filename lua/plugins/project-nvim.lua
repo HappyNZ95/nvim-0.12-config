@@ -11,3 +11,5 @@ require("nvim-tree").setup({
 		update_root = true,
 	},
 })
+
+require("project_nvim").setup()
