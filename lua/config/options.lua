@@ -27,7 +27,10 @@ vim.opt.undofile = true
 vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
--- vim.opt.showmode = false
+vim.opt.showmode = false
+
+-- Share system clipboard
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 --- Case-insensitive seraching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true

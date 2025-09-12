@@ -26,3 +26,4 @@ vim.keymap.set("n", "<leader><Tab>", function()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>rr", ":restart<CR>", { desc = "Restart Neovim and open dashboard" })
