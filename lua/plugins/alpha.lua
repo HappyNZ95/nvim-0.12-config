@@ -35,8 +35,8 @@ dashboard.section.header.val = vim.split(logo, "\n")
 
 dashboard.section.buttons.val = {
 	dashboard.button("f", " htw://files/", "<cmd>Telescope find_files<cr>"),
-	dashboard.button("r", " htw://recent/", "<cmd>Telescope oldfiles<cr>"),
-	dashboard.button("p", " htw://projects/", "<cmd>Telescope projects<cr>"),
+	dashboard.button("r", " htw://files/recent/", "<cmd>Telescope oldfiles<cr>"),
+	dashboard.button("p", " htw://files/projects/", "<cmd>Telescope projects<cr>"),
 	dashboard.button(
 		"v",
 		"🧠htw://vault/",
@@ -63,6 +63,6 @@ end
 dashboard.section.header.opts.hl = "AlphaHeader"
 dashboard.section.buttons.opts.hl = "AlphaButtons"
 dashboard.section.footer.opts.hl = "AlphaFooter"
-dashboard.opts.layout[1].val = 8
+dashboard.opts.layout[1].val = 6
 dashboard.section.footer.val = "> hayden was here"
 alpha.setup(dashboard.opts)
