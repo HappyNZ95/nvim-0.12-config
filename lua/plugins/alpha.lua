@@ -19,16 +19,12 @@ dashboard.section.buttons.val = {
 	dashboard.button("f", " Find file", "<cmd>Telescope find_files<cr>"),
 	dashboard.button("r", " Recent files", "<cmd>Telescope oldfiles<cr>"),
 	dashboard.button("p", " Find project", "<cmd>Telescope projects<cr>"),
+	dashboard.button("d", "🗓️Daily note", "<cmd>lua require('config.helpers').open_daily_note()<CR>"),
 	dashboard.button(
 		"v",
 		"🧠Search vault",
 		"<cmd>lua require('telescope.builtin').find_files({cwd = '~/sync-vault/' })<cr>"
 	),
-	dashboard.button("d", "🗓️Daily note", function()
-		local today = os.date("%Y-%m-%d")
-		local path = "~/sync-vault/Diary/" .. today .. ".md"
-		vim.cmd("edit " .. path)
-	end),
 	dashboard.button(
 		"c",
 		" Config",
