@@ -13,21 +13,43 @@ local logo = [[
 ╚═╝  ╚═╝   ╚═╝    ╚══╝╚══╝    ╚═╝ ╚═╝    
                                          
                                ]]
+local logo = [[
+hhhhhhh                     tttt                                                                      /////// ///////
+h:::::h                  ttt:::t                                                                     /:::::/ /:::::/ 
+h:::::h                  t:::::t                                                                    /:::::/ /:::::/  
+h:::::h                  t:::::t                                                                   /:::::/ /:::::/   
+ h::::h hhhhh      ttttttt:::::tttttttwwwwwww           wwwww           wwwwwww                   /:::::/ /:::::/    
+ h::::hh:::::hhh   t:::::::::::::::::t w:::::w         w:::::w         w:::::w  ::::::           /:::::/ /:::::/     
+ h::::::::::::::hh t:::::::::::::::::t  w:::::w       w:::::::w       w:::::w   ::::::          /:::::/ /:::::/      
+ h:::::::hhh::::::htttttt:::::::tttttt   w:::::w     w:::::::::w     w:::::w    ::::::         /:::::/ /:::::/       
+ h::::::h   h::::::h     t:::::t          w:::::w   w:::::w:::::w   w:::::w                   /:::::/ /:::::/        
+ h:::::h     h:::::h     t:::::t           w:::::w w:::::w w:::::w w:::::w                   /:::::/ /:::::/         
+ h:::::h     h:::::h     t:::::t            w:::::w:::::w   w:::::w:::::w                   /:::::/ /:::::/          
+ h:::::h     h:::::h     t:::::t    tttttt   w:::::::::w     w:::::::::w        ::::::     /:::::/ /:::::/           
+ h:::::h     h:::::h     t::::::tttt:::::t    w:::::::w       w:::::::w         ::::::    /:::::/ /:::::/            
+ h:::::h     h:::::h     tt::::::::::::::t     w:::::w         w:::::w          ::::::   /:::::/ /:::::/             
+ h:::::h     h:::::h       tt:::::::::::tt      w:::w           w:::w                   /:::::/ /:::::/              
+ hhhhhhh     hhhhhhh         ttttttttttt         www             www                   /////// ///////               
+    ]]
 dashboard.section.header.val = vim.split(logo, "\n")
 
 dashboard.section.buttons.val = {
-	dashboard.button("f", " Find file", "<cmd>Telescope find_files<cr>"),
-	dashboard.button("r", " Recent files", "<cmd>Telescope oldfiles<cr>"),
-	dashboard.button("p", " Find project", "<cmd>Telescope projects<cr>"),
-	dashboard.button("d", "🗓️Daily note", "<cmd>lua require('config.helpers').open_daily_note()<CR>"),
+	dashboard.button("f", " htw://files/", "<cmd>Telescope find_files<cr>"),
+	dashboard.button("r", " htw://recent/", "<cmd>Telescope oldfiles<cr>"),
+	dashboard.button("p", " htw://projects/", "<cmd>Telescope projects<cr>"),
 	dashboard.button(
 		"v",
-		"🧠Search vault",
+		"🧠htw://vault/",
 		"<cmd>lua require('telescope.builtin').find_files({cwd = '~/sync-vault/' })<cr>"
 	),
 	dashboard.button(
+		"d",
+		"🗓️htw://vault/diary/" .. os.date("%Y-%m-%d") .. ".md",
+		"<cmd>lua require('config.helpers').open_daily_note()<CR>"
+	),
+	dashboard.button(
 		"c",
-		" Config",
+		" htw://nvim/config/",
 		"<cmd>lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('config') })<cr>"
 	),
 	dashboard.button("q", " Quit", "<cmd>qa<cr>"),
