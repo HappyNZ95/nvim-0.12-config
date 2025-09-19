@@ -17,13 +17,7 @@ vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>", { noremap = true, s
 
 vim.keymap.set("n", "<leader>|", ":vsplit<CR>")
 
---open scratchpad terminal--
-vim.keymap.set("n", "<leader><Tab>", function()
-	-- Open a horizontal terminal height 15
-	vim.cmd("15split | terminal")
-	--Enter insert mode automatically
-	vim.cmd("startinsert")
-end, { noremap = true, silent = true })
-
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>rr", ":restart<CR>", { desc = "Restart Neovim and open dashboard" })
+
+local helpers = require("config.helpers")
