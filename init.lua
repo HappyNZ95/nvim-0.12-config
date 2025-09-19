@@ -26,6 +26,9 @@ require("plugins.telescope")
 --require("plugins.fzf-lua")
 require("plugins.alpha")
 
+--terminal
+require("config.floatingterm")
+
 -- mini
 require("plugins.mini-statusline")
 
